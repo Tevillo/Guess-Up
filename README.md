@@ -6,6 +6,10 @@ A terminal-based "Heads Up" party game, themed around *A Song of Ice and Fire*.
 
 Play solo with friends in the same room, or get up to 9 people across the internet into the same game through a relay server (1 host + 8 joiners).
 
+<p align="center">
+  <img src="docs/screenshots/guess-up-front.png" alt="Main menu — ASOIAF Heads Up!" width="480">
+</p>
+
 ## Quickstart
 
 Grab a prebuilt binary from the **[latest release](https://github.com/Tevillo/Guess-Up/releases/latest)** — Linux and Windows archives are available. Simply unpack and double click `guess_up` (or `guess_up.exe`), and you're in. Configure settings, color schemes, and lists from inside the application! 
@@ -23,6 +27,10 @@ From the main menu, pick one of:
 - **Join Game** — enter a friend's relay address and room code to jump into their room.
 - **Settings** — tweak the timer, countdown, word list, category, color scheme, and import new lists.
 
+<p align="center">
+  <img src="docs/screenshots/guess-up-settings.png" alt="Settings screen" width="480">
+</p>
+
 **During a round,** only three keys matter:
 
 | Key | Action |
@@ -33,10 +41,23 @@ From the main menu, pick one of:
 
 A countdown plays at the start of each game (disable it in Settings if you prefer a cold start). The screen flashes green on correct and red on pass. When the timer hits zero you get a stats box — score, accuracy, pace, and missed words — then drop back into the menu. In the last 10 seconds of the round a red border blinks around the terminal edge and the timer text turns red so a distracted Holder can't miss the clock.
 
+The Viewer sees the current word; the Holder sees only a `GUESS!` prompt with the timer and score:
+
+<p align="center">
+  <img src="docs/screenshots/guess-up-gameplay.png" alt="Gameplay — Viewer word on the left, Holder GUESS! prompt on the right" width="900">
+</p>
+
 **Networked games** split players into two roles:
 
 - **Holder** — sees only a prompt and the timer. Guesses based on verbal clues from the room.
 - **Viewer** — sees the current word and gives clues without saying it.
+
+The host opens a room on a relay server and waits in a lobby that shows the room code and everyone who's joined; the joiner just enters the address and room code:
+
+<p align="center">
+  <img src="docs/screenshots/guess-up-host-lobby.png" alt="Host lobby with room code and player list" width="300">
+  <img src="docs/screenshots/guess-up-join.png" alt="Join screen — relay address and room code entry" width="360">
+</p>
 
 The host picks who the Holder is before each round, so you can rotate roles without reconnecting. The room stays alive across games — after each round the host gets **Play Again**, **Pick Next Holder**, or **Quit**; joiners wait in the stats screen until the host kicks off the next round.
 
